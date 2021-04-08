@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block content %}
+  <!-- ======= Hero Section ======= -->
+
+
+  <main id="main">
+    <section id="about" class="values">
+
+      <div class="container mt-5" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Our Values</h2>
+          <p>Odit est perspiciatis laborum et dicta</p>
+        </header>
+
+        <div class="row justify-content-md-center">
+
+          <div class="col-lg-6">
+              <form method="POST" action=""  enctype="multipart/form-data">
+
+                  {{ form.hidden_tag() }}
+                    <div class="form-group">
+                  {{ form.file.label(for="formFileLg", class="form-label") }}
+                  {{ form.file( class="form-control form-control-lg", id="formFileLg") }}</br>
+                  {% if form.file.errors %}
+                      {% for error in form.file.errors %}
+                          <span class="text-danger">{{ error }}</span>
+                      {% endfor %}
+                  {% endif %}
+                    </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            {{form.height.label(class="form-control-label")}}
+                            {% if form.height.errors %}
+                                {{ form.height(class="form-control is-invalid", type='number') }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.height.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.height(class="form-control", type='number') }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            {{form.width.label(class="form-control-label")}}
+                            {% if form.width.errors %}
+                                {{ form.width(class="form-control is-invalid", type='number') }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.width.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.width(class="form-control", type='number') }}
+                            {% endif %}
+                        </div>
+                    </div>
+
+                </div><br>
+<center>
+                <div class="form-buttons-w">{{form.submit(class="btn btn-primary btn-lg btn-block ")}}</div>
+</center>
+<!--                <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>-->
+
+<!--                  <label for="formFileLg" class="form-label">Large file input example</label>-->
+<!--                  <input class="form-control form-control-lg" id="formFileLg" type="file" />-->
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+
+    </section><!-- End Values Section -->
+
+  </main><!-- End #main -->
+
+{% endblock content %}
