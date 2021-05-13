@@ -1,5 +1,10 @@
 {% extends "layout.html" %}
 {% block content %}
+
+
+
+
+     
   <!-- ======= Hero Section ======= -->
 
 
@@ -9,8 +14,8 @@
       <div class="container mt-5" data-aos="fade-up">
 
         <header class="section-header">
-          <h2>Our Values</h2>
-          <p>Odit est perspiciatis laborum et dicta</p>
+          
+          <p>Customize Your Image Here</p>
         </header>
 
         <div class="row justify-content-md-center">
@@ -20,10 +25,10 @@
 
                   {{ form.hidden_tag() }}
                     <div class="form-group">
-                  {{ form.file.label(for="formFileLg", class="form-label") }}
-                  {{ form.file( class="form-control form-control-lg", id="formFileLg") }}</br>
-                  {% if form.file.errors %}
-                      {% for error in form.file.errors %}
+                  {{ form.image.label(for="formFileLg", class="form-label") }}
+                  {{ form.image( class="form-control form-control-lg", id="formFileLg") }}</br>
+                  {% if form.image.errors %}
+                      {% for error in form.image.errors %}
                           <span class="text-danger">{{ error }}</span>
                       {% endfor %}
                   {% endif %}
@@ -79,5 +84,8 @@
     </section><!-- End Values Section -->
 
   </main><!-- End #main -->
-
 {% endblock content %}
+
+
+
+
