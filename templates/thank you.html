@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+  <!-- ======= Hero Section ======= -->
+
+
+  <main id="main">
+    <section id="about" class="values mt-5">
+
+
+    <div class="jumbotron text-center">
+      <h1 class="display-3">Thank You!</h1>
+      <p class="lead"><strong>Please click on download to download your image</strong> for more resolutions click.</p>
+      <hr>
+      <p>
+        Having trouble? <a href="">Contact us</a>
+      </p>
+      <p class="lead">
+        <a class="btn btn-primary btn-sm" href="{{url_for('download',file=file)}}" role="button">Download</a>
+      </p>
+      <img src="{{url_for('static', filename='images/' + file)}}">
+    </div>
+
+    </section><!-- End Values Section -->
+
+  </main><!-- End #main -->
+
+{% endblock content %}
