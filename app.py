@@ -124,10 +124,10 @@ def predefined():
     return render_template('predefined.html',tilte='Predefined Exam',form=form)
 
 
-
 @app.route('/thank-you/<string:file>')
 def thank_you(file):
     return render_template('thank you.html',tilte='Thank You', file=file)
+
 
 @app.route('/download/<string:file>')
 def download(file):
@@ -136,4 +136,4 @@ def download(file):
 
 
 if __name__ == "__main__":
-    app.run(port=1000,debug=True)
+    app.run(port=1001,debug=True)
