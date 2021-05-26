@@ -18,8 +18,8 @@ def save_picture(from_picture,width,height):
     output_size = (width,height)
 
     i = Image.open(from_picture)
-    i.thumbnail(output_size)
-    i.save(picture_path)
+    img = i.resize(output_size)
+    img.save(picture_path)
 
     return picture_fn
 
@@ -42,10 +42,21 @@ class PredefinedExamField(FlaskForm):
                        validators=[DataRequired()])
     submit = SubmitField('Resize Image')
 
+
 @app.route('/')
 @app.route('/home')
 def home():
     return render_template('index.html', title='Home')
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html', title='About')
+
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html', title='Contact Us')
 
 
 @app.route('/custom', methods=['GET','POST'])
