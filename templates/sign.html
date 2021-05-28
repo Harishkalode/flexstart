@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block content %}
+
+     
+  <!-- ======= Hero Section ======= -->
+
+
+  <main id="main">
+    <section id="about" class="values">
+
+      <div class="container mt-5" data-aos="fade-up">
+
+        <header class="section-header">
+          
+          <p>Predefined Exams Signature</p>
+        </header>
+
+        <div class="row justify-content-md-center">
+
+          <div class="col-lg-6">
+		    <form method="POST" action=""  enctype="multipart/form-data">
+				                  {{ form.hidden_tag() }}
+
+			<div class="form-group">
+                  {{ form.image.label(for="formFileLg", class="form-label") }}
+                  {{ form.image( class="form-control form-control-lg", id="formFileLg") }}</br>
+                  {% if form.image.errors %}
+                      {% for error in form.image.errors %}
+                          <span class="text-danger">{{ error }}</span>
+                      {% endfor %}
+                  {% endif %}
+                    </div>
+                <br>
+				<div class="form-group">
+					{{form.exam.label(class="form-control-label")}}
+					{% if form.exam.errors %}
+						{{ form.exam(class="form-control is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.exam.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.exam(class="form-control") }}
+					{% endif %}
+                </div>
+                <br>
+<center>
+                <div class="form-buttons-w">{{form.submit(class="btn btn-primary btn-lg btn-block ")}}</div>
+</center>
+
+			   </form>
+            </div>
+          </div>
+
+        </div>
+
+
+    </section><!-- End Values Section -->
+
+  </main><!-- End #main -->
+
+{% endblock content %}
+
+
