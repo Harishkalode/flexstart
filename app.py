@@ -10,6 +10,7 @@ from wtforms.validators import DataRequired
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'kjsdchksuhfkhhjdgdfgwufjldcnvsuyfhoiwofcjkjszhudyqwt67edroikepowkmdasnjdvtyqrw5yr8ojknds'
 
+
 def save_picture(from_picture,width,height):
     rendom_hex = secrets.token_hex(8)
     f_name, f_ext = os.path.splitext(from_picture.filename)
@@ -19,7 +20,7 @@ def save_picture(from_picture,width,height):
 
     i = Image.open(from_picture)
     img = i.resize(output_size)
-    img.save(picture_path, quality=99)
+    img.save(picture_path, quality=93)
 
     return picture_fn
 
@@ -79,7 +80,7 @@ def custom():
     return render_template('custom.html', form=form,title='Customization')
 
 
-@app.route('/predefined',methods = ['GET','POST'])
+@app.route('/predefined',methods=['GET','POST'])
 def predefined():
     form = PredefinedExamField()
     h = 0
@@ -126,7 +127,7 @@ def predefined():
     elif form.exam.data == 'lic aao':
         h = 230
         w = 200
-    elif form.exam.data == 'cd exam':
+    elif form.exam.data == 'cad exam':
         h = 140
         w = 110
     elif form.exam.data == 'jee':
