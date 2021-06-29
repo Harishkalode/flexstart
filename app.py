@@ -127,7 +127,7 @@ def predefined():
     elif form.exam.data == 'lic aao':
         h = 230
         w = 200
-    elif form.exam.data == 'cad exam':
+    elif form.exam.data == 'cds exam':
         h = 140
         w = 110
     elif form.exam.data == 'jee':
@@ -194,7 +194,7 @@ def signature():
     elif form.exam.data == 'lic aao':
         h = 100
         w = 400
-    elif form.exam.data == 'cd exam':
+    elif form.exam.data == 'cds exam':
         h = 110
         w = 140
     elif form.exam.data == 'jee':
